@@ -1,0 +1,19 @@
+<project default="genfiles" basedir="./" >
+    <property name="generated.source.dir" value="${basedir}"  />
+    <property name="lib" value="lib" />
+
+    <target name="genfiles" description="Generate the files">
+        <taskdef name="mbgenerator"
+                 classname="org.mybatis.generator.ant.GeneratorAntTask"
+                 classpath="MybatisGenerator/lib/mybatisgen.jar" >
+
+        </taskdef>
+        <property name="sqlLib" value="${basedir}/MybatisGenerator/lib/mysql-connector-java-5.1.30.jar"/>
+
+        <mbgenerator overwrite="true" configfile="${basedir}/MybatisGenerator/generator.xml" verbose="false" >
+            <propertyset>
+                <propertyref name="generated.source.dir"/>
+            </propertyset>
+        </mbgenerator>
+    </target>
+</project>
