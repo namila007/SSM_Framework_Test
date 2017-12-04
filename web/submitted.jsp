@@ -10,9 +10,11 @@
 <%@ taglib prefix="s" uri="/struts-tags" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Submitted</title>
 </head>
 <body>
-
+<p>ID=<s:property value="%{user.id}"/> <b>
+    name=
+    <s:property value="%{user.name}"/> is submitted</p>
 </body>
 </html>

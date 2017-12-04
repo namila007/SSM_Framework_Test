@@ -8,9 +8,14 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 <%@ taglib prefix="s" uri="/struts-tags" %>
-<!Doctype <!doctype html>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme() + "://" + request.getServerName() + ":" + request.getServerPort() + path + "/";
+%>
+<!Doctype html>
 <html lang="en">
 <head>
+    <base href="<%=basePath%>">
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -21,11 +26,11 @@
 
 
     <s:form action="register"  method="post" >
-        <s:textfield name="id" label="id"></s:textfield>
-        <s:textfield name="name" label="name"></s:textfield>
-        <s:textfield name="age" label="age"></s:textfield>
-        <s:textfield name="other" label="Other"></s:textfield>
-        <s:submit value="register"></s:submit>
+        <s:textfield name="user.id" label="id"/>
+        <s:textfield name="user.name" label="name"/>
+        <s:textfield name="user.age" label="age"/>
+        <s:textfield name="user.other" label="Other"/>
+        <s:submit value="save"/>
     </s:form>
 
 </body>

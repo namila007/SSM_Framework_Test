@@ -13,7 +13,7 @@
     <package name="default" extends="struts-default">
 
     <action name="register" class="com.doerit.action.UserAction" method="save">
-        <result name="success">submitted.jsp</result>
+        <result name="success">/submitted.jsp</result>
         <result name="error">error.jsp</result>
     </action>
 

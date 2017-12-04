@@ -3,8 +3,12 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+    <typeAliases>
+        <typeAlias type="com.doerit.model.User" alias="user"/>
+    </typeAliases>
+
     <mappers>
-        <mapper resource="com/dao/xml/UserMapper.xml"/>
+        <mapper resource="com/doerit/dao/xml/UserMapper.xml"/>
     </mappers>
 
 

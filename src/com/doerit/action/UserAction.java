@@ -10,18 +10,17 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 
-@Controller
-@Scope("prototype")
 public class UserAction extends ActionSupport {
     private String RETURNVALUE="success";
     private User user;
     private int id,age;
     private String other,name;
-    @Autowired UserService userService;
+    private UserService userService;
 
-    @Transactional
+    //@Transactional
     public String save(){
         System.out.println("Starting execute..");
+        System.out.println("User added " + user.getName());
         int val=userService.insertBy(user);
         if(val==1){
             System.out.println("added data"+ user.getName());

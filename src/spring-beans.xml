@@ -24,13 +24,18 @@
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="userAction" class="com.doerit.action.UserAction">
-        <property name="service" ref="userService"/>
-
+    <bean id="usermapper" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="sqlSessionFactory" ref="sqlSessionFactory"/>
+        <property name="mapperInterface" value="com.doerit.dao.UserMapper"/>
     </bean>
 
     <bean id="userService" class="com.doerit.service.UserService">
-        <property name="userDao" ref="userDao"/>
+        <property name="usermapper" ref="usermapper"/>
+    </bean>
+
+    <bean id="userAction" class="com.doerit.action.UserAction">
+        <property name="userService" ref="userService"/>
+
     </bean>
 
 
