@@ -15,7 +15,7 @@
 <body>
 <center>
     <h1>Duplicate data;</h1><br>
-    Exception name: <s:property value="exception"/>
+    <h3>Exception name: <s:property value="exception"/></h3>
 
 </center>
 </body>

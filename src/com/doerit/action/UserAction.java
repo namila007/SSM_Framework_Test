@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.SQLException;
 
-
+//User action class here all the struts action methods are defined
 public class UserAction extends ActionSupport {
     private String RETURNVALUE="success";
     private User user;
@@ -19,13 +19,13 @@ public class UserAction extends ActionSupport {
     private String other,name;
     private UserService userService;
 
-    public static final int MYSQL_DUPLICATE_PK = 1062; //for duplicate keys
 
-    //@Transactional
+    //struts save method
     public String save(){
         System.out.println("Starting execute..");
         System.out.println("User added " + user.getName());
 
+        //running the service
         int val = userService.insertBy(user);
         if (val == 1) {
             System.out.println("added data" + user.getName());
@@ -36,6 +36,12 @@ public class UserAction extends ActionSupport {
         }
 
     }
+
+    //bean class injecting userservice here
+    public void setUserService(UserService userService) {
+        this.userService = userService;
+    }
+
 
     public User getUser() {
         return user;
@@ -81,7 +87,4 @@ public class UserAction extends ActionSupport {
         return userService;
     }
 
-    public void setUserService(UserService userService) {
-        this.userService = userService;
     }
-}

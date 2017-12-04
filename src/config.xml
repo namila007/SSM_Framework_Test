@@ -7,6 +7,7 @@
         <typeAlias type="com.doerit.model.User" alias="user"/>
     </typeAliases>
 
+    <!--add all your mappers xml-->
     <mappers>
         <mapper resource="com/doerit/dao/xml/UserMapper.xml"/>
     </mappers>

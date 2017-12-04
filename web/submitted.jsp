@@ -13,8 +13,9 @@
     <title>Submitted</title>
 </head>
 <body>
+<%--getting instered data--%>
 <p>ID=<s:property value="%{user.id}"/> <b>
-    name=
+
     <s:property value="%{user.name}"/> is submitted</p>
 </body>
 </html>

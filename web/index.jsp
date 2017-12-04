@@ -24,7 +24,7 @@
 </head>
 <body>
 
-
+<%--getting POJO data for User model--%>
     <s:form action="register"  method="post" >
         <s:textfield name="user.id" label="id"/>
         <s:textfield name="user.name" label="name"/>
