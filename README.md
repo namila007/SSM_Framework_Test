@@ -58,4 +58,8 @@ This is a test project for integrating Spring+Struts+Mybatis framework for JavaW
 
 ---
 ### Resources
-* [blog.cdn]( http://blog.csdn.net/lk7688535/article/details/51243753)
+it was hard to find the resource for SSM framework, here's some reosurces found from chinese sites
+* [tutorial 1]( http://blog.csdn.net/lk7688535/article/details/51243753)
+* [transaction tx method](http://blog.csdn.net/u012964143/article/details/43761509)
+* [Maven version](http://blog.csdn.net/AC_great/article/details/47614273)
+
