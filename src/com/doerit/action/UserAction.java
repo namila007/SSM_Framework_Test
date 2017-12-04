@@ -9,6 +9,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.sql.SQLException;
+
 
 public class UserAction extends ActionSupport {
     private String RETURNVALUE="success";
@@ -17,18 +19,22 @@ public class UserAction extends ActionSupport {
     private String other,name;
     private UserService userService;
 
+    public static final int MYSQL_DUPLICATE_PK = 1062; //for duplicate keys
+
     //@Transactional
     public String save(){
         System.out.println("Starting execute..");
         System.out.println("User added " + user.getName());
-        int val=userService.insertBy(user);
-        if(val==1){
-            System.out.println("added data"+ user.getName());
+
+        int val = userService.insertBy(user);
+        if (val == 1) {
+            System.out.println("added data" + user.getName());
             return RETURNVALUE;
-        }else{
+        } else {
             System.out.println("failed");
             return "error";
         }
+
     }
 
     public User getUser() {
