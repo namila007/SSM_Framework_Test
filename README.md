@@ -32,7 +32,7 @@ This is a test project for integrating Spring+Struts+Mybatis framework for JavaW
 ------
 ### Create MySQL DB
 
-##### 1. create a database called `struts` and a user with **username=`struts1` & password=`abc123`**
+##### 1. create a database called `struts` and a user with **username=`struts1` & password=`abc123`** or just change the `jdbc.properties` username and password to `root`(so no need to create another user)
 &nbsp;
 ##### 2. Transfer database privilages for newly created user
 &nbsp;
