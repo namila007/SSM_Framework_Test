@@ -4,6 +4,8 @@ import com.doerit.model.User;
 import com.doerit.model.UserExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.ResultMap;
+import org.apache.ibatis.annotations.Select;
 
 public interface UserMapper {
     /**
@@ -93,4 +95,14 @@ public interface UserMapper {
      * @mbg.generated Sun Dec 03 21:06:53 IST 2017
      */
     int updateByPrimaryKey(User record);
+
+    List<String> getNames(String name);
+
+    @Select("SELECT name " +
+            " FROM tbl_user " +
+            " WHERE name LIKE #{searchValue}")
+    @ResultMap("BaseResultMap")
+    List<User> searchByName(@Param("searchValue") String likeSearchValue);
+
+
 }

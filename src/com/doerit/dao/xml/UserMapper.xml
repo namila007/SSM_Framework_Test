@@ -118,6 +118,14 @@
     from tbl_user
     where id = #{id,jdbcType=INTEGER}
   </select>
+
+  <!-- made by me-->
+  <select id="getNames" parameterType="arraylist" resultMap="BaseResultMap">
+
+    SELECT name from tbl_user WHERE name LIKE %#{names,jdbcType=VARCHAR}
+
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     <!--
       WARNING - @mbg.generated
