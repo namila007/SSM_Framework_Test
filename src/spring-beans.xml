@@ -49,6 +49,17 @@
         <property name="userService" ref="userService"/>
     </bean>
 
+    <bean id="uservals" class="com.doerit.model.UserNames">
+        <property name="userService" ref="userService"/>
+    </bean>
+    <!--
+        <bean id="listJSON" class="com.doerit.model.Result">
+            <property name="userService" ref="userService"/>
+            <property name="userNames" ref="uservals"/>
+
+        </bean>
+    -->
+
 
 </beans>
 

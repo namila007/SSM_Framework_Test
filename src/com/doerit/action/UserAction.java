@@ -58,12 +58,12 @@ public class UserAction extends ActionSupport {
     }
 
     public String getNames() {
-        //userNames.setName(user.getName());
+       /* //userNames.setName(user.getName());
         System.out.println(userNames.getName() + " <<<THIS IS TYPED");
         namelist = userService.getNames(userNames.getName());
         // userNames.setNames(namelist);
         System.out.println("*****************");
-        System.out.printf(namelist.toString() + " This is the list");
+        System.out.printf(namelist.toString() + " This is the list");*/
         return "done";
     }
 

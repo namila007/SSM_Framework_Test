@@ -64,9 +64,9 @@ public class AjaxAutoComplete extends ActionSupport {
 
     public String setCombo() {
 
-        name = userNames.getName();
-        //name="nam";
-        System.out.println(term + " <<<THIS IS TYPED");
+        /*name = userNames.getName();
+        name="nam";
+        System.out.println(name + " <<<THIS IS TYPED");
         names = userService.getNames(name);
 
 
@@ -74,7 +74,7 @@ public class AjaxAutoComplete extends ActionSupport {
         System.out.println("*****************");
         System.out.printf(names.toString() + " This is the list");
         newnames = getNamesonly(userService.getNames(name));
-        userNames.setNames(newnames);
+        userNames.setNames(newnames);*/
         return "success";
 
     }

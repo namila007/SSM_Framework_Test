@@ -26,6 +26,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 
 </head>
@@ -56,8 +59,32 @@
 
 <script type='text/javascript'>
 
+    $(document).ready(function() {
+        $(function() {
+            $("#user1").autocomplete({
+                source : function(request, response) {
+                    $.ajax({
+                        url: "userinput.html",
+                        type: "Post",
+                        data:JSON.stringify({"name": request.term}),
+                        contentType: "application/json",
+                        dataType: "json",
+                        success : function(data) {
+                            response(data.names);
+
+                            console.log(data.names);
+                            console.log(request.term);
+                        }
+                    });
+                }
+            });
+        });
+    });
+
+
     function getname() {
-        var text1 = document.getElementById("user_widget").value.trim();
+        var text1 = document.getElementById("user1").value.trim();
+        var respond;
         console.log(text1);
         $.ajax({
             url: "userinput.html",
@@ -67,16 +94,19 @@
             dataType: "json",
             success: function (resp) {
 
-                console.log(resp);
 
-
+               respond=resp.names;
+                console.log(respond);
+                $('#user1').autocomplete({
+                    source: respond.names});
             },
 
         })
+
     }
 </script>
 <s:url var="remoteurl" action="autoCompleterAction"/>
-<sj:autocompleter
+<%--<sj:autocompleter
         id="user"
         name="user"
         href="%{remoteurl}"
@@ -85,9 +115,11 @@
         onkeyup="getname()"
 
 
-/>
+/>--%>
 
 
+<s:url var="url" action="listJSON"/>
+<s:textfield   name="user1" id="user1" href="%{remoteurl}" class="user1"/>
 
 
 </body>
