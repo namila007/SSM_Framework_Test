@@ -41,6 +41,12 @@
     <bean id="userAction" class="com.doerit.action.UserAction">
         <property name="userService" ref="userService"/>
 
+
+    </bean>
+
+
+    <bean id="AjaxAutoComplete" class="com.doerit.action.AjaxAutoComplete">
+        <property name="userService" ref="userService"/>
     </bean>
 
 
